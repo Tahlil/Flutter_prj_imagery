@@ -10,12 +10,16 @@ class ImageModel {
     id = parsedJson['id'];
     url = parsedJson['urls']['raw'] + "&w=600&h=600";
     print("url: " + url);
-    if(parsedJson['descrption'] == null){
-      title = parsedJson['alt_descrption'];
+    if(parsedJson['description'] == null){
+      title = parsedJson['alt_description'];
+    }
+    else if(parsedJson['description'] != null){
+      title = parsedJson['description'];
     }
     else{
-      title = parsedJson['descrption'];
+      title = "No Caption";
     }
+    print("title: $title");
     likes = parsedJson['likes'];
   }
 }
